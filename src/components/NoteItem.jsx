@@ -1,4 +1,4 @@
-function NoteItem({ note }) {
+function NoteItem({ note, onDeleteNote }) {
   //! date options
   const options = {
     year: "numeric",
@@ -15,7 +15,7 @@ function NoteItem({ note }) {
         </div>
 
         <div className="actions">
-          <button className="trash">
+          <button className="trash" onClick={() => onDeleteNote(note.id)}>
             <i className="ri-delete-bin-line"></i>
           </button>
 
