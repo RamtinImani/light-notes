@@ -1,4 +1,4 @@
-function NoteItem({ note, onDeleteNote }) {
+function NoteItem({ note, onDeleteNote, onCompleteNote }) {
   //! date options
   const options = {
     year: "numeric",
@@ -7,7 +7,7 @@ function NoteItem({ note, onDeleteNote }) {
   };
 
   return (
-    <div className="note-item">
+    <div className={`note-item ${note.isCompleted ? "completed" : ""}`}>
       <div className="note-item__header">
         <div>
           <p className="title">{note.title}</p>
@@ -20,6 +20,7 @@ function NoteItem({ note, onDeleteNote }) {
           </button>
 
           <input
+            onChange={onCompleteNote}
             type="checkbox"
             name={note.title}
             id={note.id}

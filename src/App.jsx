@@ -17,6 +17,18 @@ function App() {
     setNotes((prevNotes) => prevNotes.filter((note) => note.id !== noteId));
   };
 
+  //! complete note handler
+  const handleCompleteNote = (event) => {
+    //! access to the checkbox input value
+    const noteId = Number(event.target.value);
+
+    setNotes((prevNotes) =>
+      prevNotes.map((note) =>
+        note.id === noteId ? { ...note, isCompleted: !note.isCompleted } : note
+      )
+    );
+  };
+
   return (
     <div className="note-app">
       <div className="note-app__header">header</div>
@@ -24,7 +36,11 @@ function App() {
       <div className="note-app__body">
         <AddNewNote onAddNote={handleAddNote} />
         <div className="note-app__container">
-          <NoteList notes={notes} onDeleteNote={handleDeleteNote} />
+          <NoteList
+            notes={notes}
+            onDeleteNote={handleDeleteNote}
+            onCompleteNote={handleCompleteNote}
+          />
         </div>
       </div>
     </div>
