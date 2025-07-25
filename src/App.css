@@ -4,3 +4,25 @@
   padding: 2rem;
   text-align: center;
 }
+
+.note-app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--text-400);
+}
+
+.note-app__body {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.note-app__data {
+  width: 30%;
+}
+
+.note-app__container {
+  width: 60%;
+}
