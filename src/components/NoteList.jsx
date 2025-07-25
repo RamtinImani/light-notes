@@ -1,5 +1,13 @@
-function NoteList() {
-  return <div>NoteList</div>;
+import NoteItem from "./NoteItem";
+
+function NoteList({ notes }) {
+  return (
+    <div className="note-list">
+      {notes.map((note) => (
+        <NoteItem key={note.id} note={note} />
+      ))}
+    </div>
+  );
 }
 
 export default NoteList;
