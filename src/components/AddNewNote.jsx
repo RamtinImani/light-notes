@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddNewNote() {
+function AddNewNote({ onAddNote }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -20,9 +20,11 @@ function AddNewNote() {
       createdAt: new Date().toISOString(),
     };
 
-    //! clear form inputs after submit
+    //! Clear form inputs after submission
     setTitle("");
     setDescription("");
+    //! update notes state
+    onAddNote(newNote);
   };
 
   return (
