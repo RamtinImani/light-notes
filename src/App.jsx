@@ -1,4 +1,5 @@
 import "./App.css";
+import AddNewNote from "./components/AddNewNote";
 
 function App() {
   return (
@@ -6,7 +7,7 @@ function App() {
       <div className="note-app__header">header</div>
 
       <div className="note-app__body">
-        <div className="note-app__data">add new not form</div>
+        <AddNewNote />
         <div className="note-app__container">notes</div>
       </div>
     </div>

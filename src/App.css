@@ -19,6 +19,11 @@
   gap: 2rem;
 }
 
+.note-app__form {
+  gap: 1.5rem;
+  display: grid;
+}
+
 .note-app__data {
   width: 30%;
 }
