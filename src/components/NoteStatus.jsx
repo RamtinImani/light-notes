@@ -1,3 +1,5 @@
+import Message from "./Message";
+
 function NoteStatus({ notes }) {
   const allNotes = notes.length;
   const completedNotes = notes.filter((note) => note.isCompleted).length;
@@ -5,9 +7,11 @@ function NoteStatus({ notes }) {
 
   if (!allNotes)
     return (
-      <h2>
-        <span>🖋️</span>No notes found
-      </h2>
+      <Message>
+        <h2>
+          <span>🖋️</span>No notes found
+        </h2>
+      </Message>
     );
 
   return (
