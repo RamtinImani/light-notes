@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import AddNewNote from "./components/AddNewNote";
 import NoteList from "./components/NoteList";
+import NoteStatus from "./components/NoteStatus";
 
 function App() {
   //! notes state => lifted up state
@@ -36,6 +37,7 @@ function App() {
       <div className="note-app__body">
         <AddNewNote onAddNote={handleAddNote} />
         <div className="note-app__container">
+          <NoteStatus notes={notes} />
           <NoteList
             notes={notes}
             onDeleteNote={handleDeleteNote}
