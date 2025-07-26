@@ -3,10 +3,11 @@ import "./App.css";
 import AddNewNote from "./components/AddNewNote";
 import NoteList from "./components/NoteList";
 import NoteStatus from "./components/NoteStatus";
+import NoteHeader from "./components/NoteHeader";
 
 function App() {
-  //! notes state => lifted up state
   const [notes, setNotes] = useState([]);
+  const [sortBy, setSortBy] = useState("latest");
 
   //! add new note handler
   const handleAddNote = (newNote) => {
@@ -20,7 +21,6 @@ function App() {
 
   //! complete note handler
   const handleCompleteNote = (event) => {
-    //! access to the checkbox input value
     const noteId = Number(event.target.value);
 
     setNotes((prevNotes) =>
@@ -32,14 +32,16 @@ function App() {
 
   return (
     <div className="note-app">
-      <div className="note-app__header">header</div>
-
+      {/* //! Header */}
+      <NoteHeader notes={notes} sortBy={sortBy} onSortNote={(e) => setSortBy(e.target.value)} />
+      {/* //! Contents */}
       <div className="note-app__body">
         <AddNewNote onAddNote={handleAddNote} />
         <div className="note-app__container">
           <NoteStatus notes={notes} />
           <NoteList
             notes={notes}
+            sortBy={sortBy}
             onDeleteNote={handleDeleteNote}
             onCompleteNote={handleCompleteNote}
           />
