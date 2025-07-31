@@ -1,3 +1,5 @@
+import { TrashIcon } from "@heroicons/react/24/outline";
+
 function NoteItem({ note, onDeleteNote, onCompleteNote }) {
   //! date options
   const options = {
@@ -16,11 +18,12 @@ function NoteItem({ note, onDeleteNote, onCompleteNote }) {
 
         <div className="actions">
           <button className="trash" onClick={() => onDeleteNote(note.id)}>
-            <i className="ri-delete-bin-line"></i>
+            <TrashIcon className="remove" />
           </button>
 
           <input
             onChange={onCompleteNote}
+            className="complete"
             type="checkbox"
             name={note.title}
             id={note.id}
