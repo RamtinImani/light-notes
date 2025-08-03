@@ -17,7 +17,7 @@ function NoteList({ notes, onDeleteNote, onCompleteNote, sortBy }) {
   }
 
   return (
-    <div className="note-list">
+    <div className="note__list">
       {sortedNotes.map((note) => (
         <NoteItem
           key={note.id}

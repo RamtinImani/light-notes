@@ -9,21 +9,21 @@ function NoteItem({ note, onDeleteNote, onCompleteNote }) {
   };
 
   return (
-    <div className={`note-item ${note.isCompleted ? "completed" : ""}`}>
-      <div className="note-item__header">
+    <div className={`note__item ${note.isCompleted ? "completed" : ""}`}>
+      <div className="note__item--header">
         <div>
-          <p className="title">{note.title}</p>
-          <p className="desc">{note.description}</p>
+          <p className="note__title">{note.title}</p>
+          <p className="note__description">{note.description}</p>
         </div>
 
-        <div className="actions">
-          <button className="trash" onClick={() => onDeleteNote(note.id)}>
-            <TrashIcon className="remove" />
+        <div className="note__actions">
+          <button className="note__trash--btn" onClick={() => onDeleteNote(note.id)}>
+            <TrashIcon className="note__trash" />
           </button>
 
           <input
             onChange={onCompleteNote}
-            className="complete"
+            className="note__complete"
             type="checkbox"
             name={note.title}
             id={note.id}
@@ -33,7 +33,7 @@ function NoteItem({ note, onDeleteNote, onCompleteNote }) {
         </div>
       </div>
 
-      <div className="note-item__footer">
+      <div className="note__item--footer">
         {new Date(note.createdAt).toLocaleDateString("en-US", options)}
       </div>
     </div>

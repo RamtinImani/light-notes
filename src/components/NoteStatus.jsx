@@ -8,22 +8,22 @@ function NoteStatus({ notes }) {
   if (!allNotes)
     return (
       <Message>
-        <h2>
-          <span>🖋️</span>No notes found
-        </h2>
+        <h3 className="note__message">
+          <span>✒️</span> No notes found!
+        </h3>
       </Message>
     );
 
   return (
-    <ul className="note-status">
-      <li>
-        All <span>{allNotes}</span>
+    <ul className="note__status">
+      <li className="note__status--info">
+        All <span className="note__counter">{allNotes}</span>
       </li>
-      <li>
-        Completed <span>{completedNotes}</span>
+      <li className="note__status--info">
+        Completed <span className="note__counter">{completedNotes}</span>
       </li>
-      <li>
-        Open <span>{unCompletedNotes}</span>
+      <li className="note__status--info">
+        Open <span className="note__counter">{unCompletedNotes}</span>
       </li>
     </ul>
   );

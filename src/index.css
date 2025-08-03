@@ -1,77 +1,104 @@
+/* ===== Font ===== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ===== VARIABLES ===== */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --bg-color: #f3f4f6;
-  --text-700: #374151;
-  --text-400: #94a3b8;
-  --text-100: #f3f4f6;
-  --text-300: #cbd5e1;
-  --white: #fff;
-  --primary-700: #4338ca;
-  --primary-600: #4f46e5;
-  --primary-100: #e0e7ff;
-  --rose-500: #f43f5e;
+  /* ===== COLORS ===== */
+  --body-color: #f3f4f6;
+  --color-text-100: #cbd5e1;
+  --color-text-200: #94a3b8;
+  --color-text-300: #374151;
+  --color-primary-100: #e6d6f2;
+  --color-primary-200: #b3a4d5;
+  --color-primary-300: #6f4c93;
+  --color-primary-400: #3d1a6d;
+  --color-white: #fff;
+  --color-trash: #ff2321;
+  /* ===== Font and typography ===== */
+  /*.5rem = 5px | 1rem = 10px ...*/
+  --primary-font: "Roboto", sans-serif;
+  --normal-font-size: 1.4rem;
 }
 
-* {
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 640px) {
+  :root {
+    --normal-font-size: 1.6rem;
+  }
+}
+
+/* ===== BASE ===== */
+*,
+::before,
+::after {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
-  list-style: none;
+}
+
+html {
+  font-size: 62.5%; /* font--size: 10px */
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: var(--primary-font);
+  font-size: var(--normal-font-size);
+}
+
+select {
+  font-family: var(--primary-font);
 }
 
 body {
-  background-color: var(--bg-color);
-  width: 100vw;
-  min-height: 100vh;
+  background-color: var(--body-color);
+  min-height: 100dvh;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
 }
 
 input {
   display: block;
-  outline: none;
-  border: none;
+  caret-color: var(--color-primary-300);
+  accent-color: var(--color-primary-400);
 }
 
 button {
-  outline: none;
-  border: none;
   cursor: pointer;
   background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 p {
   text-align: left;
 }
 
-h1,
-h2 {
-  margin-bottom: 1.5rem;
-  color: var(--text-700);
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 select {
-  padding: 0.5rem 1rem;
+  width: 11rem;
+  padding: 0.5rem;
   outline: none;
-  border: 1px solid var(--text-400);
-  border-radius: 0.75rem;
-  font-weight: 700;
-  color: var(--text-700);
-}
-
-.text-field {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  color: var(--text-700);
-  font-size: 1rem;
-}
-
-.btn {
-  border-radius: 0.5rem;
-  padding: 1rem 1rem;
-}
-
-.btn--primary {
-  background-color: var(--primary-600);
-  color: white;
-  font-size: 1rem;
+  border: 2px solid var(--color-primary-300);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-text-300);
 }

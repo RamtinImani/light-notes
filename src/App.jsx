@@ -31,13 +31,13 @@ function App() {
   };
 
   return (
-    <div className="note-app">
+    <div className="note">
       {/* //! Header */}
       <NoteHeader notes={notes} sortBy={sortBy} onSortNote={(e) => setSortBy(e.target.value)} />
       {/* //! Contents */}
-      <div className="note-app__body">
+      <div className="note__body">
         <AddNewNote onAddNote={handleAddNote} />
-        <div className="note-app__container">
+        <div className="note__container">
           <NoteStatus notes={notes} />
           <NoteList
             notes={notes}

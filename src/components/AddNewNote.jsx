@@ -28,15 +28,14 @@ function AddNewNote({ onAddNote }) {
   };
 
   return (
-    <div className="note-app__data">
-      <h2>Add New Note</h2>
+    <div className="note__data">
       {/* //! Add New Note Form */}
-      <form className="note-app__form" onSubmit={handleSubmit}>
+      <form className="note__form" onSubmit={handleSubmit}>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
-          className="text-field"
+          className="note__text-field"
           name="note-title"
           placeholder="Note Title"
         />
@@ -45,7 +44,7 @@ function AddNewNote({ onAddNote }) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           type="text"
-          className="text-field"
+          className="note__text-field"
           name="note-description"
           placeholder="Note Description"
         />
