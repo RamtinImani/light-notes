@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import AddNewNote from "./components/AddNewNote";
 import NoteList from "./components/NoteList";
@@ -6,8 +6,13 @@ import NoteStatus from "./components/NoteStatus";
 import NoteHeader from "./components/NoteHeader";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(() => JSON.parse(localStorage.getItem("Notes")) || []);
   const [sortBy, setSortBy] = useState("latest");
+
+  //! save notes
+  useEffect(() => {
+    localStorage.setItem("Notes", JSON.stringify(notes));
+  }, [notes]);
 
   //! add new note handler
   const handleAddNote = (newNote) => {
