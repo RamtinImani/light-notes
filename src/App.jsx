@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useReducer, useState } from "react";
 import "./App.css";
 import AddNewNote from "./components/AddNewNote";
 import NoteList from "./components/NoteList";
@@ -20,7 +20,7 @@ function notesReducer(notes, { type, payload }) {
       );
     }
     default:
-      throw new Error("Unknown Action Error" + type);
+      throw new Error("Unknown Action Error: " + type);
   }
 }
 
