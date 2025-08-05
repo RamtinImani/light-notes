@@ -4,6 +4,7 @@ import AddNewNote from "./components/AddNewNote";
 import NoteList from "./components/NoteList";
 import NoteStatus from "./components/NoteStatus";
 import NoteHeader from "./components/NoteHeader";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function notesReducer(notes, { type, payload }) {
   switch (type) {
@@ -29,11 +30,8 @@ function App() {
     JSON.parse(localStorage.getItem("Notes")) || []
   );
   const [sortBy, setSortBy] = useState("latest");
-
   //! save notes
-  useEffect(() => {
-    localStorage.setItem("Notes", JSON.stringify(notes));
-  }, [notes]);
+  useLocalStorage("Notes", notes);
 
   //! add new note handler
   const handleAddNote = (newNote) => {
