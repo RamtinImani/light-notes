@@ -1,6 +1,9 @@
 import { TrashIcon } from "@heroicons/react/24/outline";
+import { useNotesDispatch } from "../contexts/notesContext";
 
-function NoteItem({ note, onDeleteNote, onCompleteNote }) {
+function NoteItem({ note }) {
+  const dispatch = useNotesDispatch();
+
   //! date options
   const options = {
     year: "numeric",
@@ -17,17 +20,20 @@ function NoteItem({ note, onDeleteNote, onCompleteNote }) {
         </div>
 
         <div className="note__actions">
-          <button className="note__trash--btn" onClick={() => onDeleteNote(note.id)}>
+          {/* delete note */}
+          <button
+            className="note__trash--btn"
+            onClick={() => dispatch({ type: "DELETE NOTE", payload: note.id })}
+          >
             <TrashIcon className="note__trash" />
           </button>
-
+          {/* complete note */}
           <input
-            onChange={onCompleteNote}
+            onChange={() => dispatch({ type: "COMPLETE NOTE", payload: note.id })}
             className="note__complete"
             type="checkbox"
             name={note.title}
             id={note.id}
-            value={note.id}
             checked={note.isCompleted}
           />
         </div>

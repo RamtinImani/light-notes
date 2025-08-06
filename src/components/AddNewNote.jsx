@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNotesDispatch } from "../contexts/notesContext";
 
-function AddNewNote({ onAddNote }) {
+function AddNewNote() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const dispatch = useNotesDispatch();
 
   //! handle add new note form submission
   const handleSubmit = (event) => {
@@ -23,8 +25,8 @@ function AddNewNote({ onAddNote }) {
     //! Clear form inputs after submission
     setTitle("");
     setDescription("");
-    //! update notes state
-    onAddNote(newNote);
+    //! add new note
+    dispatch({ type: "ADD NOTE", payload: newNote });
   };
 
   return (
