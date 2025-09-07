@@ -146,8 +146,8 @@
 .note__edit--btn,
 .note__edit,
 .note__complete {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 .note__trash {
   color: var(--color-trash);
@@ -192,8 +192,8 @@
   font-weight: bold;
 }
 .modal__close {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 2rem;
+  height: 2rem;
   color: var(--color-trash);
 }
 .modal__body {
@@ -201,22 +201,39 @@
   flex-direction: column;
   row-gap: 2rem;
 }
+.modal__question {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
 .modal__note-title {
   color: var(--color-primary-300);
+}
+.modal__edit-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }
 .modal__buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.btn--cancel,
+.btn--delete,
+.btn--edit {
+  width: 45%;
+}
 .btn--cancel {
   background-color: var(--color-text-100);
-  padding-inline: 5rem;
 }
 .btn--delete {
   color: var(--color-white);
   background-color: var(--color-trash);
-  padding-inline: 5rem;
+}
+.btn--edit {
+  color: var(--color-white);
+  background-color: var(--color-primary-400);
 }
 /* ===== BREAKPOINTS ===== */
 @media screen and (min-width: 640px) {
@@ -260,12 +277,15 @@
   .note__edit--btn,
   .note__edit,
   .note__complete {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
-  .modal__close {
     width: 2rem;
     height: 2rem;
+  }
+  .modal {
+    max-width: 55rem;
+  }
+  .modal__close {
+    width: 2.2rem;
+    height: 2.2rem;
   }
   .note__text-field,
   .btn {

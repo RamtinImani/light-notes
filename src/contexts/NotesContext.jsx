@@ -11,6 +11,18 @@ function notesReducer(notes, { type, payload }) {
     case "ADD NOTE": {
       return [...notes, payload];
     }
+    case "EDIT NOTE": {
+      return notes.map((note) =>
+        note.id === payload.id
+          ? {
+              ...note,
+              title: payload.title,
+              description: payload.description,
+              createdAt: payload.createdAt,
+            }
+          : note
+      );
+    }
     case "DELETE NOTE": {
       return notes.filter((note) => note.id !== payload);
     }

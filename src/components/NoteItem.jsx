@@ -5,6 +5,8 @@ import Modal from "./Modal";
 
 function NoteItem({ note }) {
   const dispatch = useNotesDispatch();
+  const [title, setTitle] = useState(note.title);
+  const [description, setDescription] = useState(note.description);
   const [isOpenEditModal, setIsOpenEditModal] = useState(false);
   const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
 
@@ -13,6 +15,22 @@ function NoteItem({ note }) {
     year: "numeric",
     month: "long",
     day: "numeric",
+  };
+
+  //! handle edit note form submission
+  const handleEditNote = (event) => {
+    event.preventDefault();
+    dispatch({
+      type: "EDIT NOTE",
+      payload: {
+        id: note.id,
+        title,
+        description,
+        isCompleted: false,
+        createdAt: new Date().toISOString(),
+      },
+    });
+    setIsOpenEditModal(false);
   };
 
   return (
@@ -33,7 +51,40 @@ function NoteItem({ note }) {
           </button>
           {/* edit note modal */}
           <Modal title="Edit Note" open={isOpenEditModal} onOpen={setIsOpenEditModal}>
-            note data: form with title, description and edit button for submit changes
+            <form className="modal__edit-form" onSubmit={handleEditNote}>
+              <input
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                type="text"
+                className="note__text-field"
+                name="note-title"
+                placeholder="Note Title"
+              />
+              <input
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                type="text"
+                className="note__text-field"
+                name="note-description"
+                placeholder="Note Description"
+              />
+
+              <div className="modal__buttons">
+                <button
+                  onClick={() => {
+                    setTitle(note.title);
+                    setDescription(note.description);
+                    setIsOpenEditModal(false);
+                  }}
+                  className="btn btn--cancel"
+                >
+                  Cancel
+                </button>
+                <button type="submit" className="btn btn--edit">
+                  Edit
+                </button>
+              </div>
+            </form>
           </Modal>
           {/* delete note */}
           <button
@@ -45,7 +96,7 @@ function NoteItem({ note }) {
           {/* delete note modal */}
           <Modal title="Delete Note" open={isOpenDeleteModal} onOpen={setIsOpenDeleteModal}>
             <div className="modal__body">
-              <h3>
+              <h3 className="modal__question">
                 Do you want to delete "<span className="modal__note-title">{note.title}</span>"
                 note?
               </h3>
