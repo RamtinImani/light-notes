@@ -1,4 +1,4 @@
-import { useNotes } from "../contexts/notesContext";
+import { useNotes } from "../contexts/NotesContext";
 
 function NoteHeader({ sortBy, onSortNote }) {
   const notes = useNotes();

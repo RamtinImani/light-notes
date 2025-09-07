@@ -1,4 +1,4 @@
-import { useNotes } from "../contexts/notesContext";
+import { useNotes } from "../contexts/NotesContext";
 import NoteItem from "./NoteItem";
 
 function NoteList({ sortBy }) {

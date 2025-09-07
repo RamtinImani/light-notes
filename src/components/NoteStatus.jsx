@@ -1,4 +1,4 @@
-import { useNotes } from "../contexts/notesContext";
+import { useNotes } from "../contexts/NotesContext";
 import Message from "./Message";
 
 function NoteStatus() {

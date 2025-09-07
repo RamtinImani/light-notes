@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNotesDispatch } from "../contexts/notesContext";
+import { useNotesDispatch } from "../contexts/NotesContext";
 
 function AddNewNote() {
   const [title, setTitle] = useState("");

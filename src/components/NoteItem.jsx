@@ -1,8 +1,11 @@
-import { TrashIcon } from "@heroicons/react/24/outline";
-import { useNotesDispatch } from "../contexts/notesContext";
+import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { useNotesDispatch } from "../contexts/NotesContext";
+import { useState } from "react";
+import Modal from "./Modal";
 
 function NoteItem({ note }) {
   const dispatch = useNotesDispatch();
+  const [isOpenEditModal, setIsOpenEditModal] = useState(false);
 
   //! date options
   const options = {
@@ -20,6 +23,17 @@ function NoteItem({ note }) {
         </div>
 
         <div className="note__actions">
+          {/* edit note */}
+          <button
+            className="note__edit--btn"
+            onClick={() => setIsOpenEditModal((prevOpen) => !prevOpen)}
+          >
+            <PencilIcon className="note__edit" />
+          </button>
+          {/* edit note modal */}
+          <Modal title="Edit Note" open={isOpenEditModal} onOpen={setIsOpenEditModal}>
+            note data: form with title, description and edit button for submit changes
+          </Modal>
           {/* delete note */}
           <button
             className="note__trash--btn"

@@ -3,7 +3,6 @@
   margin: 0 auto;
   padding-inline: 1.6rem;
 }
-
 /* ===== COMPONENTS ===== */
 .note__text-field {
   width: 100%;
@@ -14,29 +13,24 @@
   border: 2px solid var(--color-text-100);
   transition: border 0.3s;
 }
-
 .note__text-field:focus {
   border: 2px solid var(--color-primary-300);
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
-
 .btn {
   font-size: var(--normal-font-size);
   padding: 1rem;
   border-radius: 1rem;
 }
-
 .btn--primary {
   color: white;
   background-color: var(--color-primary-400);
   border: 2px solid var(--color-primary-400);
   transition: all 0.2s;
 }
-
 .btn--primary:hover {
   border: 2px solid var(--color-primary-200);
 }
-
 /* ===== HEADER ===== */
 .note__header {
   width: 100%;
@@ -52,19 +46,16 @@
   border-bottom-right-radius: 1.6rem;
   padding-inline: 1.6rem;
 }
-
 .note__info {
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
 }
-
 .note__info--name {
   font-size: 1.6rem;
   font-weight: bold;
   color: var(--color-text-300);
 }
-
 .note__counter {
   width: 2rem;
   height: 2rem;
@@ -76,48 +67,40 @@
   background-color: var(--color-primary-400);
   color: var(--color-white);
 }
-
 /* ===== MAIN ===== */
 .note {
   overflow-x: hidden;
 }
-
 .note__body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding-top: 8rem;
 }
-
 .note__form {
   display: grid;
   gap: 1.6rem;
 }
-
 .note__message {
   font-size: 1.8rem;
   color: var(--color-text-300);
 }
-
 .note__status {
   display: flex;
   justify-content: space-between;
   color: var(--color-text-200);
   margin-bottom: 2rem;
 }
-
 .note__status--info {
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
 }
-
 .note__list {
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
 }
-
 .note__item {
   padding: 1.4rem;
   margin-bottom: 0.5rem;
@@ -125,7 +108,6 @@
   border-radius: 1rem;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
-
 .note__item--header {
   display: flex;
   align-items: center;
@@ -134,111 +116,138 @@
   margin-bottom: 0.5rem;
   border-bottom: 2px solid var(--color-text-100);
 }
-
 .note__title {
   color: var(--color-text-300);
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
-
 .note__item.completed .note__title {
   text-decoration: line-through;
   text-decoration-color: var(--color-primary-300);
 }
-
 .note__item.completed {
   opacity: 80%;
 }
-
 .note__description {
   font-weight: 300;
   color: var(--color-text-200);
   margin-bottom: 0.5rem;
 }
-
 .note__title,
 .note__description {
   white-space: normal;
   word-break: break-word;
   overflow-wrap: break-word;
 }
-
 .note__actions {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
-
 .note__trash--btn,
 .note__trash,
+.note__edit--btn,
+.note__edit,
 .note__complete {
   width: 1.6rem;
   height: 1.6rem;
 }
-
 .note__trash {
   color: var(--color-trash);
 }
-
+.note__edit {
+  color: var(--color-primary-400);
+}
 .note__item--footer {
   text-align: center;
   color: var(--color-text-200);
 }
-
+/* ===== MODAL ===== */
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: rgba(63, 69, 76, 0.8);
+}
+.modal {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-white);
+  padding: 1.4rem;
+  border-radius: 1rem;
+  box-shadow: 0px 2px 10px var(--color-text-300);
+  z-index: 100;
+}
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-text-100);
+}
+.modal__title {
+  font-weight: bold;
+}
+.modal__close {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: var(--color-trash);
+}
 /* ===== BREAKPOINTS ===== */
 @media screen and (min-width: 640px) {
   #root {
     padding-inline: 2.4rem;
   }
-
   .note__header {
     position: initial;
     padding-inline: 2rem;
   }
-
   .note__info--name,
   .note__message {
     font-size: 2rem;
   }
-
   select {
     width: 14rem;
     font-size: 1.4rem;
   }
-
   .note__body {
     flex-direction: row;
     gap: 3rem;
     padding-top: 3rem;
   }
-
   .note__data {
     width: 40%;
   }
-
   .note__form {
     gap: 2rem;
   }
-
   .note__container {
     width: 60%;
   }
-
   .note__item {
     padding: 2rem;
   }
-
   .note__description {
     font-size: 1.4rem;
   }
-
   .note__trash--btn,
   .note__trash,
+  .note__edit--btn,
+  .note__edit,
   .note__complete {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .modal__close {
     width: 2rem;
     height: 2rem;
   }
-
   .note__text-field,
   .btn {
     padding: 1.4rem;

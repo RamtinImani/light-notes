@@ -4,7 +4,7 @@ import AddNewNote from "./components/AddNewNote";
 import NoteList from "./components/NoteList";
 import NoteStatus from "./components/NoteStatus";
 import NoteHeader from "./components/NoteHeader";
-import NotesProvider from "./contexts/notesContext";
+import NotesProvider from "./contexts/NotesContext";
 
 function App() {
   const [sortBy, setSortBy] = useState("latest");
