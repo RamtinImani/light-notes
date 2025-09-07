@@ -6,6 +6,7 @@ import Modal from "./Modal";
 function NoteItem({ note }) {
   const dispatch = useNotesDispatch();
   const [isOpenEditModal, setIsOpenEditModal] = useState(false);
+  const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
 
   //! date options
   const options = {
@@ -37,10 +38,33 @@ function NoteItem({ note }) {
           {/* delete note */}
           <button
             className="note__trash--btn"
-            onClick={() => dispatch({ type: "DELETE NOTE", payload: note.id })}
+            onClick={() => setIsOpenDeleteModal((prevOpen) => !prevOpen)}
           >
             <TrashIcon className="note__trash" />
           </button>
+          {/* delete note modal */}
+          <Modal title="Delete Note" open={isOpenDeleteModal} onOpen={setIsOpenDeleteModal}>
+            <div className="modal__body">
+              <h3>
+                Do you want to delete "<span className="modal__note-title">{note.title}</span>"
+                note?
+              </h3>
+              <div className="modal__buttons">
+                <button onClick={() => setIsOpenDeleteModal(false)} className="btn btn--cancel">
+                  Cancel
+                </button>
+                <button
+                  onClick={() => {
+                    dispatch({ type: "DELETE NOTE", payload: note.id });
+                    setIsOpenDeleteModal(false);
+                  }}
+                  className="btn btn--delete"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </Modal>
           {/* complete note */}
           <input
             onChange={() => dispatch({ type: "COMPLETE NOTE", payload: note.id })}

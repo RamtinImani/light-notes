@@ -199,6 +199,28 @@
   height: 1.8rem;
   color: var(--color-trash);
 }
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.modal__note-title {
+  color: var(--color-primary-300);
+}
+.modal__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn--cancel {
+  background-color: var(--color-text-100);
+  padding-inline: 5rem;
+}
+.btn--delete {
+  color: var(--color-white);
+  background-color: var(--color-trash);
+  padding-inline: 5rem;
+}
 /* ===== BREAKPOINTS ===== */
 @media screen and (min-width: 640px) {
   #root {
