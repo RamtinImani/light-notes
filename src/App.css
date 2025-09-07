@@ -125,9 +125,6 @@
   text-decoration: line-through;
   text-decoration-color: var(--color-primary-300);
 }
-.note__item.completed {
-  opacity: 80%;
-}
 .note__description {
   font-weight: 300;
   color: var(--color-text-200);
