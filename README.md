@@ -40,6 +40,13 @@ This app wasn’t just about building a notes tool — it was a way to **practic
 
 ---
 
+## 🌐 Online Preview
+
+You can try the live version of Light Notes here:  
+👉 [**https://light-note.netlify.app/**](https://light-note.netlify.app/)
+
+---
+
 ## 📸 Screenshots
 
 ![preview image](/preview.png)
