@@ -100,6 +100,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
+  margin-bottom: 2rem;
 }
 .note__item {
   padding: 1.4rem;
@@ -160,7 +161,7 @@
   color: var(--color-text-200);
 }
 /* ===== MODAL ===== */
-.backdrop {
+.modal__backdrop {
   width: 100vw;
   height: 100vh;
   position: fixed;
