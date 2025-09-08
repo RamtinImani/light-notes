@@ -17,6 +17,21 @@ With a clean and intuitive interface, it allows you to manage your notes effortl
 
 ---
 
+## 🎯 Goal of the Project
+
+The main purpose of building **Light Notes** was to strengthen my understanding of core React concepts and best practices.  
+This project allowed me to experiment with and apply the following:  
+
+- ⚡ **React Custom Hooks** – Creating reusable logic across components.  
+- 🧩 **State Management** – Practicing with `useState`, `useReducer`, and combining them with `useContext`.  
+- 🔗 **Context + Reducer Pattern** – Implementing a scalable way to manage global state.  
+- 🎛️ **Event Handling** – Gaining experience in handling user interactions in React.  
+- 🛠️ **Practical Experience** – Applying theoretical knowledge in a real-world project.  
+
+This app wasn’t just about building a notes tool — it was a way to **practice, learn, and improve my React skills** while creating something useful.  
+
+---
+
 ## 🚀 Tech Stack
 
 - **React.js**  
