@@ -47,3 +47,5 @@ npm install
 
 # Start the development server
 npm run dev
+
+# Once the development server is running, open the localhost link in your browser to start using Light Notes.
