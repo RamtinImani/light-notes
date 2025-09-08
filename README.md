@@ -37,7 +37,7 @@ Follow these steps to run Light Notes locally:
 
 ```bash
 # Clone the repository
-git clone 
+git clone https://github.com/RamtinImani/light-notes.git
 
 # Navigate into the project directory
 cd light-notes
